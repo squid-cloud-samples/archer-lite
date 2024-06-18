@@ -1,16 +1,18 @@
 {
-  "name": "onboarding-archer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "archer-quickstart",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "start-squid": "npm run start",
-    "start": "concurrently --raw --kill-others \"cd backend && npm run start-squid\" \"node sleep.js 3000 && cd frontend && npm run dev\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "samples start",
+    "build": "npm run build --workspaces",
+    "format": "prettier . --write"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
-  }
+    "@squidcloud/samples": "^1.0.11",
+    "prettier": "^3.2.5"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
 }
